@@ -64,6 +64,8 @@ public class NewBehaviourScript : MonoBehaviour
         
         //마우스 클릭 이벤트
         //if(Input.GetMouseButtonDown(0)) Debug.Log("죄클릭 입력");
+        
+        
     }
 
     //모든 Update 함수가 호출된 후, 마지막으로 호출 주로 오브젝트를 따라가게 설정한 카메라는 LateUpdate 를 사용
