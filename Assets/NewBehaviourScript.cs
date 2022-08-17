@@ -23,6 +23,10 @@ public class NewBehaviourScript : MonoBehaviour
     void Start()
     {
         //Debug.Log("게임 시작준비, 예)사냥 장비 챙김");
+        //Vactor3 오브젝트의 방향값 백터3 = 3D 백터2 = 2D
+        //Vector3 vec = new Vector3(0, 0, 0);
+
+        //transform.Translate(vec);//정의된 백터를 움직이게하는 함
     }
     
     //2.물리영역
@@ -65,7 +69,14 @@ public class NewBehaviourScript : MonoBehaviour
         //마우스 클릭 이벤트
         //if(Input.GetMouseButtonDown(0)) Debug.Log("죄클릭 입력");
         
+        //유니티의 플레이어 인풋 세팅을 사용
+        //Input.GetAxis("Horizontal") 사용시 반환값이 float 형으로 반환됨 (가중치 있음)
+        //Input.GetAxisRaw("Horizontal") 사용시 반환값 int 형 (가중치 없음 )
+        if (Input.GetButton("Horizontal")) Debug.Log("좌우 이동중" + Input.GetAxis("Horizontal"));
+
+        Vector3 vec = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
         
+        transform.Translate(vec);
     }
 
     //모든 Update 함수가 호출된 후, 마지막으로 호출 주로 오브젝트를 따라가게 설정한 카메라는 LateUpdate 를 사용
